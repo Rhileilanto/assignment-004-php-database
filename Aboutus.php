@@ -1,4 +1,32 @@
-<!DOCTYPE html>
+<?php
+$server="localhost";
+$username="root";
+$password="";
+$database="web2";
+
+$conn=mysqli_connect($server,$username,$password,$database)
+
+if( isset($_POST[submitButton]))
+{
+    $email=$_POST['email'];
+
+
+    $insertData = mysqli_query($conn, "INSERT INTO
+    subscriber(email)
+   VALUES('$email')");
+   if($insertData)
+
+  {
+    echo "Data submitted successfully";
+  }
+  else
+    echo "Error Occured"
+
+
+}
+
+
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,7 +49,7 @@
                     <div class="navbar-nav">
                         <a href="index.html" class="nav-link active">Home</a>
                         <a href="Aboutus.html" class="nav-link">About Us</a>
-                        <a href="#" class="nav-link">Contact us</a>
+                        <a href="#" class="nav-link" class="btn btn-primary">Register now</a>
                     </div>
                 </div>
             </div>
@@ -76,13 +104,13 @@
             </div>
             <div>
                 <p>Subscribe to get information, latest news about Zalego Academy</p>
-                <form>
+                <form action="Aboutus.php" method="POST">
                     <div class="row">
                        <div class="mb-3 col-lg-6 col-md-6">
-                            <input type="email" class="form-control" placeholder="Your email address">
+                            <input type="email" class="form-control" name="email" placeholder="Your email address">
                         </div>
                         <div class="mb-3 col-lg-6 col-md-6">
-                             <button class="btn btn-primary">Subscribe</button>
+                             <button  type="submit" name="submitButton "class="btn btn-primary">Subscribe</button>
                         </div>
                     </div>
                 </form>

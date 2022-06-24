@@ -1,22 +1,4 @@
-<?php
-$server="localhost";
-$username="root";
-$password="";
-$database="web2";
 
-$conn=mysqli_connect($server,$username,$password,$database)
-
-if( isset($_POST[submitButton]))
-{
-    $insertData = mysqli_query($conn, "INSERT INTO
-    subscriber(no,email,created_at)
-   VALUES('$no','$email','created_at')");
-
-
-}
-
-
-?>
 
 
 <!DOCTYPE html>
@@ -40,7 +22,7 @@ if( isset($_POST[submitButton]))
                 <div class="navbar-nav">
                     <a href="index.html" class="nav-link active">Home</a>
                     <a href="Aboutus.html" class="nav-link">About Us</a>
-                    <a href="#" class="nav-link">Contact us</a>
+                    <a href="#"class="btn btn-primary" class="nav-link">Register now</a>
                 </div>
             </div>
         </div>
