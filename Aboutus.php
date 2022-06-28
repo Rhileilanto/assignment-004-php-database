@@ -6,7 +6,7 @@ $database="web2";
 
 $conn=mysqli_connect($server,$username,$password,$database)
 
-if( isset($_POST[submitButton]))
+if (isset($_POST["submitButton"]))
 {
     $email=$_POST['email'];
 
@@ -110,7 +110,7 @@ if( isset($_POST[submitButton]))
                             <input type="email" class="form-control" name="email" placeholder="Your email address">
                         </div>
                         <div class="mb-3 col-lg-6 col-md-6">
-                             <button  type="submit" name="submitButton "class="btn btn-primary">Subscribe</button>
+                             <button  type="submit" name="submitButton"class="btn btn-primary">Subscribe</button>
                         </div>
                     </div>
                 </form>
